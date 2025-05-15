@@ -3,8 +3,11 @@ import Herosection from "../component/HeroSection/Herosection";
 import AboutCoffee from "../component/AboutCoffee";
 import Coffes from "../component/displayCoffees/Coffes";
 import InstaGallery from "../component/socialGallery/InstaGallery";
+import { useLoaderData } from "react-router";
 
 const Home = () => {
+  const initailCoffe = useLoaderData();
+
   return (
     <div>
       <Herosection />
@@ -12,7 +15,7 @@ const Home = () => {
         <div className="bg-primary py-8">
           <AboutCoffee />
         </div>
-        <Coffes />
+        <Coffes coffes={initailCoffe} />
         <InstaGallery />
       </div>
     </div>

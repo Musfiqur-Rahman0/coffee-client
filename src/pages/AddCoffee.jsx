@@ -4,6 +4,28 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link } from "react-router";
 
 const AddCoffee = () => {
+  const handleAddCoffe = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const from_entries = new FormData(form);
+    const formData = Object.fromEntries(from_entries.entries());
+
+    fetch("http://localhost:3000/coffes", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          window.alert("successfully added the coffe");
+          form.reset();
+        }
+      });
+  };
   return (
     <div className="max-w-7xl mx-auto mt-12 space-y-[50px]">
       <Link to={"/"} className="flex items-center gap-3">
@@ -23,7 +45,7 @@ const AddCoffee = () => {
           </p>
         </div>
 
-        <form className="w-[80%] mx-auto">
+        <form onSubmit={handleAddCoffe} className="w-[80%] mx-auto">
           <div className="grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <label
@@ -51,6 +73,7 @@ const AddCoffee = () => {
               <input
                 type="text"
                 id="category"
+                name="category"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Hot coffee"
                 required

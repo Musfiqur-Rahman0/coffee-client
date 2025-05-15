@@ -1,7 +1,8 @@
 import React from "react";
 import CoffeeCard from "./CoffeeCard";
 
-const Coffes = () => {
+const Coffes = ({ coffes }) => {
+  console.log(coffes);
   return (
     <div className="max-w-7xl mx-auto flex flex-col gap-8 items-center justify-center">
       <div className="space-y-3 text-center">
@@ -14,14 +15,10 @@ const Coffes = () => {
         </button>
       </div>
 
-      {/* products */}
       <div className="grid grid-cols-2 gap-5 w-full">
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
-        <CoffeeCard />
+        {coffes.map((coffee) => (
+          <CoffeeCard key={coffee._id} coffee={coffee} />
+        ))}
       </div>
     </div>
   );

@@ -81,7 +81,7 @@ const Footer = () => {
           <h2 className="font-secondary text-3xl text-title font-bold">
             Contact with us
           </h2>
-          <form onSubmit="" className="space-y-4 ">
+          <form className="space-y-4 ">
             <input
               type="text"
               name="name"
