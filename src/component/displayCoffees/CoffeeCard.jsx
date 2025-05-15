@@ -22,6 +22,7 @@ const CoffeeCard = ({ coffee, setAllCoffes, allCoffes }) => {
 
   const handleEdit = (id) => {
     console.log("clicked", id);
+    navigate(`/update-coffee/${id}`);
   };
 
   const handleDelete = (id) => {
