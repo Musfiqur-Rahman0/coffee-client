@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import CoffeeCard from "./CoffeeCard";
 
 const Coffes = ({ coffes }) => {
-  console.log(coffes);
+  const [coffesData, setCoffesData] = useState(coffes);
+
   return (
     <div className="max-w-7xl mx-auto flex flex-col gap-8 items-center justify-center">
       <div className="space-y-3 text-center">
@@ -16,8 +17,13 @@ const Coffes = ({ coffes }) => {
       </div>
 
       <div className="grid grid-cols-2 gap-5 w-full">
-        {coffes.map((coffee) => (
-          <CoffeeCard key={coffee._id} coffee={coffee} />
+        {coffesData.map((coffee) => (
+          <CoffeeCard
+            key={coffee._id}
+            coffee={coffee}
+            allCoffes={coffesData}
+            setAllCoffes={setCoffesData}
+          />
         ))}
       </div>
     </div>

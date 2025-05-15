@@ -2,8 +2,9 @@ import React from "react";
 import { FaEye } from "react-icons/fa";
 import { HiPencilAlt } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
+import Swal from "sweetalert2";
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee, setAllCoffes, allCoffes }) => {
   const icons = [
     { icon: FaEye, color: "#D1B188" }, // Light brown/tan
     { icon: HiPencilAlt, color: "#3A3738" }, // Dark gray
@@ -11,7 +12,47 @@ const CoffeeCard = ({ coffee }) => {
   ];
 
   const { name, category, photourl, price, supplier, _id } = coffee;
-  console.log(coffee);
+
+  const handleViewcoffee = (id) => {
+    console.log(id);
+  };
+
+  const handleEdit = (id) => {
+    console.log("clicked", id);
+  };
+
+  const handleDelete = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this",
+      icon: "warning",
+      showCancelButton: true,
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes delete it.",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/coffee/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remainingCoffes = allCoffes.filter(
+                (coffee) => coffee._id !== id
+              );
+              setAllCoffes(remainingCoffes);
+              Swal.fire({
+                title: "Deleted!",
+                icon: "success",
+                draggable: true,
+              });
+            }
+          });
+      }
+    });
+  };
+
   return (
     <div className="p-8 rounded-lg bg-card grid grid-cols-3 items-center gap-3">
       <figure>
@@ -39,6 +80,11 @@ const CoffeeCard = ({ coffee }) => {
                 style={{
                   backgroundColor: color,
                 }}
+                onClick={
+                  (index === 0 && (() => handleViewcoffee(_id))) ||
+                  (index === 1 && (() => handleEdit(_id))) ||
+                  (index === 2 && (() => handleDelete(_id)))
+                }
                 className={`cursor-pointer p-3 rounded-lg text-white`}
               >
                 <Icon size={24} />
