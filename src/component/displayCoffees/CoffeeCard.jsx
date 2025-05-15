@@ -2,6 +2,7 @@ import React from "react";
 import { FaEye } from "react-icons/fa";
 import { HiPencilAlt } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const CoffeeCard = ({ coffee, setAllCoffes, allCoffes }) => {
@@ -12,9 +13,11 @@ const CoffeeCard = ({ coffee, setAllCoffes, allCoffes }) => {
   ];
 
   const { name, category, photourl, price, supplier, _id } = coffee;
+  const navigate = useNavigate();
 
   const handleViewcoffee = (id) => {
     console.log(id);
+    navigate(`/coffee/${id}`);
   };
 
   const handleEdit = (id) => {
