@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import AddCoffee from "../pages/AddCoffee";
 import CoffeeDetails from "../pages/CoffeeDetails";
 import UpdateCoffee from "../pages/UpdateCoffee";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
         Component: CoffeeDetails,
       },
     ],
+  },
+  {
+    path: "/signup",
+    Component: Register,
+  },
+  {
+    path: "/login",
+    Component: Login,
   },
 ]);
 

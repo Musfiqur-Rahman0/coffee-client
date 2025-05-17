@@ -12,42 +12,42 @@ const InstaGallery = () => {
       <div className="w-full grid grid-cols-4 gap-5 mt-10">
         <img
           className="rounded-lg"
-          src="/src/assets/cups/Rectangle 10.png"
+          src="/assets/cups/Rectangle 10.png"
           alt=""
         />
         <img
           className="rounded-lg"
-          src="/src/assets/cups/Rectangle 11.png"
+          src="/assets/cups/Rectangle 11.png"
           alt=""
         />
         <img
           className="rounded-lg"
-          src="/src/assets/cups/Rectangle 12.png"
+          src="/assets/cups/Rectangle 12.png"
           alt=""
         />
         <img
           className="rounded-lg"
-          src="/src/assets/cups/Rectangle 13.png"
+          src="/assets/cups/Rectangle 13.png"
           alt=""
         />
         <img
           className="rounded-lg"
-          src="/src/assets/cups/Rectangle 14.png"
+          src="/assets/cups/Rectangle 14.png"
           alt=""
         />
         <img
           className="rounded-lg"
-          src="/src/assets/cups/Rectangle 15.png"
+          src="/assets/cups/Rectangle 15.png"
           alt=""
         />
         <img
           className="rounded-lg"
-          src="/src/assets/cups/Rectangle 10.png"
+          src="/assets/cups/Rectangle 10.png"
           alt=""
         />
         <img
           className="rounded-lg"
-          src="/src/assets/cups/Rectangle 9.png"
+          src="/assets/cups/Rectangle 9.png"
           alt=""
         />
       </div>
