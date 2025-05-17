@@ -1,14 +1,11 @@
 import React from "react";
+import heroImg from "../../assets/more/3.png";
 
 const Herosection = () => {
   return (
     <div className="relative h-[800px] ">
       <figure className="w-full h-full">
-        <img
-          src="/src/assets/more/3.png"
-          alt=""
-          className="h-full w-full object-cover"
-        />
+        <img src={heroImg} alt="" className="h-full w-full object-cover" />
       </figure>
       <div className="absolute inset-0 z-10 ">
         <div className="absolute top-1/2 left-1/2  text-white max-w-[724px]">

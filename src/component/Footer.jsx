@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import { TbHeartX } from "react-icons/tb";
+import logo from "../assets/more/logo1.png";
 
 const socialIcons = [
   { icon: FaFacebookF, color: "#3C2415" },
@@ -38,7 +39,7 @@ const Footer = () => {
     <div className="w-full h-full pt-26 pb-20">
       <div className="max-w-7xl mx-auto  z-10 grid grid-cols-2 gap-5 items-center justify-center">
         <div className="space-y-8 w-full">
-          <img src="/src/assets/more/logo1.png" alt="" height={60} width={60} />
+          <img src={logo} alt="" height={60} width={60} />
           <h2 className="font-secondary text-3xl font-semibold text-title">
             Espresso Emporium
           </h2>
