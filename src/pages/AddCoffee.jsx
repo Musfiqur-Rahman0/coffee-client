@@ -34,9 +34,12 @@ const AddCoffee = () => {
       </Link>
       <div className="px-5 py-20 rounded-lg bg-card flex flex-col gap-8 items-center justify-center">
         <div className="text-center space-y-3 max-w-[80%] mx-auto">
-          <h2 className="text-title text-3xl font-semibold font-secondary">
+          <Link
+            to={"/add-coffee"}
+            className="text-title text-3xl font-semibold font-secondary"
+          >
             Add New Coffee
-          </h2>
+          </Link>
           <p className="text-sm text-gray-400">
             It is a long established fact that a reader will be distraceted by
             the readable content of a page when looking at its layout. The point
