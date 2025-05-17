@@ -12,7 +12,8 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("http://localhost:3000/coffes"),
+        loader: () =>
+          fetch("https://coffee-server-kappa-three.vercel.app/coffes"),
         Component: Home,
       },
       {
@@ -22,13 +23,17 @@ const router = createBrowserRouter([
       {
         path: "/update-coffee/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/coffee/${params.id}`),
+          fetch(
+            `https://coffee-server-kappa-three.vercel.app/coffee/${params.id}`
+          ),
         Component: UpdateCoffee,
       },
       {
         path: "/coffee/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/coffee/${params.id}`),
+          fetch(
+            `https://coffee-server-kappa-three.vercel.app/coffee/${params.id}`
+          ),
         Component: CoffeeDetails,
       },
     ],
